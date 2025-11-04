@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+
+nav {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 1rem;
+}
