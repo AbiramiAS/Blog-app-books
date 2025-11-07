@@ -17,7 +17,7 @@ function RouterFunction() {
       </Route>
       <Route path="/login">
         <Route index element={<Login />} />
-        <Route path="/home" element={<BooksDisplay />} />
+        <Route path="/login/home" element={<BooksDisplay />} />
       </Route>
     </Routes>
   );
