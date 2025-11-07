@@ -15,8 +15,8 @@ function BookList({ onEdit }: Props) {
     );
 
   return (
-    <div className="max-w-4xl mx-auto">
-      <div className="grid gap-3">
+    <div className="max-w-4xl mx-auto from-white to-gray-50 dark:from-gray-900 dark:to-gray-950">
+      <div className="grid gap-3  from-white to-gray-50 dark:from-gray-900 dark:to-gray-950">
         {books.map((b: Book) => (
           <BookItem key={b.id} selectedbook={b} onEdit={onEdit} />
         ))}

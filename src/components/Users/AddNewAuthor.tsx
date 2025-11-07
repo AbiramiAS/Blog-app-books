@@ -17,7 +17,7 @@ const AddNewAuthor = () => {
   return (
     <>
       <div>
-        <button className="bg-blue-500 text-white text-md rounded p-1 mt-3"
+        <button className="bg-blue-400 text-white text-md rounded p-1 mt-3"
           type="button"
           onClick={addUserNew}
         >

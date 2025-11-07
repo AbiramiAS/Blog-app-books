@@ -14,7 +14,7 @@ function BooksDisplay() {
       <div className="text-center text-gray-500">No books yet. Add one!</div>
     );
   return (
-    <div className="min-h-screen bg-gray-50 p-6">
+    <div className="min-h-screen p-6 bg-fuchsia-50">
       <div className="max-w-5xl mx-auto">
         <div className="grid gap-3">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

@@ -73,35 +73,38 @@ const BookForm: React.FC<Props> = ({ editing = null, onDone }) => {
   ));
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-3">
+    <form
+      onSubmit={handleSubmit}
+      className="space-y-3 p-5 rounded-md bg-gray-800"
+    >
       <div>
-        <label className="block text-sm font-medium">Title</label>
+        <label className="block text-sm font-medium text-white">Title</label>
         <input
           id={"title"}
           value={title}
           onChange={onTitleChanged}
-          className="mt-1 block w-full rounded-md border p-2"
+          className="mt-1 block w-full rounded-md border p-2 text-white"
         />
       </div>
       <div>
-        <label className="block text-sm font-medium">Author</label>
+        <label className="block text-sm font-medium text-white">Author</label>
         <select
           id="author"
           value={userId || ""}
           onChange={onAuthorChanged}
-          className="mt-1 block w-full rounded-md border p-2"
+          className="mt-1 block w-full rounded-md border p-2 text-white"
         >
           <option value=""></option>
           {usersOptions}
         </select>
-        <AddNewAuthor/>
+        <AddNewAuthor />
       </div>
       <div>
-        <label className="block text-sm font-medium">Description</label>
+        <label className="block text-sm font-medium text-white">Description</label>
         <textarea
           value={description}
           onChange={onContentChanged}
-          className="mt-1 block w-full rounded-md border p-2"
+          className="mt-1 block w-full rounded-md border p-2 text-white"
         />
       </div>
       <div className="flex gap-2">
@@ -115,7 +118,7 @@ const BookForm: React.FC<Props> = ({ editing = null, onDone }) => {
           <button
             type="button"
             onClick={() => onDone?.()}
-            className="px-4 py-2 rounded border"
+            className="px-4 py-2 rounded border text-white"
           >
             Cancel
           </button>
