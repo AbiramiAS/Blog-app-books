@@ -12,7 +12,7 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to="users" className="text-xl underline">
+            <Link to="/home/users" className="text-xl underline">
               Users
             </Link>
           </li>

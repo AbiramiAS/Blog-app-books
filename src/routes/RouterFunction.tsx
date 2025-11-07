@@ -8,10 +8,13 @@ import Layout from "../components/Header/Layout";
 function RouterFunction() {
   return (
     <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<BooksDisplay />} />
+      </Route>
       <Route path="/home" element={<Layout />}>
         <Route index element={<BooksDisplay />} />
       </Route>
-      <Route path="/users">
+      <Route path="/home/users">
         <Route index element={<UserList />} />
         <Route path=":userId" element={<UserItem />} />
       </Route>

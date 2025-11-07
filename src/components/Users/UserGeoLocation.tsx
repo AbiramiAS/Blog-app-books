@@ -4,8 +4,9 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import type { Props } from "../../types/types";
 
 const UserGeoLocation: React.FC<Props> = ({ userLongitude, userLatitude }) => {
-  const longitude = userLongitude || 76.93275456824303;
-  const latitude = userLatitude || 11.02878910296039;
+  const longitude = 76.93275456824303 //userLongitude || 76.93275456824303;
+  const latitude = 11.02878910296039 //userLatitude || 11.02878910296039;
+  console.log("UserGeoLocation props:", { userLongitude, userLatitude });
 
   return (
     <div>

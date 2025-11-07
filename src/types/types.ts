@@ -35,11 +35,9 @@ export type User = {
       lat: string;
       lng: string;
     };
-  };
+  } | string;
   company?: {
     name: string;
-    catchPhrase: string;
-    bs: string;
   };
 };
 export type Props = {

@@ -24,7 +24,7 @@ function UserList() {
           {users.map((user) => (
             <Link
               key={user.id}
-              to={`/users/${user.id}`}
+              to={`/home/users/${user.id}`}
               className="group block rounded-2xl p-4 sm:p-5 bg-gray-800"
               aria-label={`Open ${user.name}'s profile`}
             >

@@ -9,6 +9,7 @@ const UserItem = () => {
   const userDetails = useSelector(selectAllUsers).find(
     (user) => user.id.toString() === userId
   );
+  console.log("userDetails", userDetails);
 
   if (!userDetails) {
     return (
@@ -24,7 +25,7 @@ const UserItem = () => {
             </p>
             <div className="mt-6">
               <Link
-                to="/users"
+                to="/home/users"
                 className="inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2 text-white shadow hover:bg-indigo-700 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 focus-visible:ring-offset-white dark:focus-visible:ring-offset-gray-950"
               >
                 <span aria-hidden>←</span>
@@ -37,14 +38,23 @@ const UserItem = () => {
     );
   }
 
-  const fullAddress = [
-    userDetails.address?.suite,
-    userDetails.address?.street,
-    userDetails.address?.city,
-    userDetails.address?.zipcode,
-  ]
-    .filter(Boolean)
-    .join(", ");
+  let fullAddress = "";
+  if (
+    userDetails.address &&
+    typeof userDetails.address === "object" &&
+    "suite" in userDetails.address
+  ) {
+    fullAddress = [
+      userDetails.address.suite,
+      userDetails.address.street,
+      userDetails.address.city,
+      userDetails.address.zipcode,
+    ]
+      .filter(Boolean)
+      .join(", ");
+  } else if (typeof userDetails.address === "string") {
+    fullAddress = userDetails.address;
+  }
 
   return (
     <div className="min-h-screen bg-gray-800">
@@ -57,7 +67,7 @@ const UserItem = () => {
           </div>
           <div className="m-1">
             <Link
-              to="/users"
+              to="/home/users"
               className="inline-flex items-center gap-2 rounded-xl  p-1 border text-white bg-gray-950"
             >
               <span aria-hidden>←</span>
@@ -83,41 +93,31 @@ const UserItem = () => {
                 </dd>
               </div>
               <div className="grid grid-cols-3 gap-2 py-3">
-                <dt className="col-span-1 text-sm text-gray-400">
-                  Email
-                </dt>
+                <dt className="col-span-1 text-sm text-gray-400">Email</dt>
                 <dd className="col-span-2 text-sm font-medium text-gray-100">
                   {userDetails.email}
                 </dd>
               </div>
               <div className="grid grid-cols-3 gap-2 py-3">
-                <dt className="col-span-1 text-sm text-gray-400">
-                  Phone
-                </dt>
+                <dt className="col-span-1 text-sm text-gray-400">Phone</dt>
                 <dd className="col-span-2 text-sm font-medium text-gray-100">
                   {userDetails.phone}
                 </dd>
               </div>
               <div className="grid grid-cols-3 gap-2 py-3">
-                <dt className="col-span-1 text-sm text-gray-400">
-                  Website
-                </dt>
+                <dt className="col-span-1 text-sm text-gray-400">Website</dt>
                 <dd className="col-span-2 text-sm font-medium text-indigo-600 hover:underline">
                   {userDetails.website}
                 </dd>
               </div>
               <div className="grid grid-cols-3 gap-2 py-3">
-                <dt className="col-span-1 text-sm text-gray-400">
-                  Company
-                </dt>
+                <dt className="col-span-1 text-sm text-gray-400">Company</dt>
                 <dd className="col-span-2 text-sm font-medium text-gray-100">
                   {userDetails.company?.name}
                 </dd>
               </div>
               <div className="grid grid-cols-3 gap-2 py-3">
-                <dt className="col-span-1 text-sm text-gray-400">
-                  Address
-                </dt>
+                <dt className="col-span-1 text-sm text-gray-400">Address</dt>
                 <dd className="col-span-2 text-sm font-medium text-gray-100">
                   {fullAddress}
                 </dd>
@@ -132,8 +132,18 @@ const UserItem = () => {
             </h2>
             <div className="h-64 sm:h-80 rounded-xl overflow-hidden">
               <UserGeoLocation
-                userLongitude={Number(userDetails.address?.geo.lng)}
-                userLatitude={Number(userDetails.address?.geo.lat)}
+                userLongitude={
+                  typeof userDetails.address === "object" &&
+                  "geo" in userDetails.address
+                    ? Number(userDetails.address.geo.lng)
+                    : 76.932
+                }
+                userLatitude={
+                  typeof userDetails.address === "object" &&
+                  "geo" in userDetails.address
+                    ? Number(userDetails.address.geo.lat)
+                    : 11.0287
+                }
               />
             </div>
           </section>
