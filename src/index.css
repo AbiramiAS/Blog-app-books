@@ -3,6 +3,17 @@
 @import 'tailwindcss';
 
 
+@layer components {
+  :root {
+    /* Breakpoints - Min width */
+    --breakpoint-xs: 20rem;
+    --color-gray-500: #6b7280;
+    
+    /* Font family */
+    --font-nunito: Nunito, sans-serif;
+  }
+}
+
 nav {
   display: flex;
   justify-content: flex-end;
@@ -29,3 +40,4 @@ button {
     cursor: not-allowed;
   }
 }
+

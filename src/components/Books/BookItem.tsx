@@ -59,7 +59,7 @@ const BookItem: React.FC<Props> = ({ selectedbook, onEdit }) => {
       )}
 
       {/* Footer meta */}
-      <div className="mt-3 flex items-center gap-2 text-xs text-gray-500 dark:text-gray-400">
+      <div className="mt-3 flex items-center gap-2 text-xs color-gray-500 dark:text-gray-400">
         <span className="inline-flex items-center rounded-full bg-gray-100 dark:bg-gray-800">
           Added:
         </span>

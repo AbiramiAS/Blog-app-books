@@ -11,7 +11,7 @@ function BookList({ onEdit }: Props) {
   const books = useSelector(getBooksData);
   if (!books?.length)
     return (
-      <div className="text-center text-gray-500">No books yet. Add one!</div>
+      <div className="text-center color-gray-500">No books yet. Add one!</div>
     );
 
   return (

@@ -11,7 +11,7 @@ function BooksDisplay() {
 
   if (!books?.length)
     return (
-      <div className="text-center text-gray-500">No books yet. Add one!</div>
+      <div className="text-center color-gray-500">No books yet. Add one!</div>
     );
   return (
     <div className="min-h-screen p-6 bg-fuchsia-50">
