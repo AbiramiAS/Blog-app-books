@@ -3,6 +3,7 @@ import { selectAllUsers } from "../../slice/UsersSlice";
 import { useSelector } from "react-redux";
 import AddNewAuthor from "./AddNewAuthor";
 import Header from "../Header/Header";
+import { Toaster } from "sonner";
 
 function UserList() {
   const users = useSelector(selectAllUsers);
@@ -46,6 +47,7 @@ function UserList() {
               </div>
             </Link>
           ))}
+          <Toaster position="bottom-center" />
         </div>
       </main>
     </div>

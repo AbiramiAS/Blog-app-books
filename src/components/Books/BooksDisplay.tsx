@@ -4,6 +4,7 @@ import type { Book } from "../../types/types";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { getBooksData } from "../../slice/BooksSlice";
+import { Toaster } from "sonner";
 
 function BooksDisplay() {
   const books = useSelector(getBooksData);
@@ -31,6 +32,7 @@ function BooksDisplay() {
                 <BookList onEdit={(b) => setEditing(b)} />
               </div>
             </div>
+            <Toaster position="bottom-right" />
           </div>
         </div>
       </div>
