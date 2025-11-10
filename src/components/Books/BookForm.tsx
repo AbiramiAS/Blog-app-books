@@ -83,7 +83,7 @@ const BookForm: React.FC<Props> = ({ editing = null, onDone }) => {
           id={"title"}
           value={title}
           onChange={onTitleChanged}
-          className="mt-1 block w-full rounded-md border p-2 text-white"
+          className="mt-1 block w-full rounded-md border p-2 text-white" required
         />
       </div>
       <div>
@@ -110,7 +110,8 @@ const BookForm: React.FC<Props> = ({ editing = null, onDone }) => {
       <div className="flex gap-2">
         <button
           type="submit"
-          className="px-4 py-2 rounded bg-indigo-600 text-white"
+          className="px-4 py-2 rounded bg-indigo-600 text-white disabled:opacity-50"
+          disabled={!title.trim() || !author.trim()}
         >
           {editing ? "Save" : "Add Book"}
         </button>
