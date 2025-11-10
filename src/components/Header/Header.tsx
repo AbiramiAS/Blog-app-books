@@ -2,17 +2,26 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="flex bg-fuchsia-100 border-width-[2px] items-center rounded-sm justify-between m-6 p-4  shawdow-md">
-      <h1 className="text-2xl font-bold">Book Blog</h1>
+    <header className="m-6 rounded-2xl bg-gray-800 px-6 py-4 shadow-sm flex items-center justify-between">
+      <h1 className="text-xl sm:text-2xl font-semibold tracking-tight text-gray-100">
+        Book Blog
+      </h1>
+
       <nav>
-        <ul>
+        <ul className="flex items-center gap-6">
           <li>
-            <Link to="/home" className="text-xl underline">
+            <Link
+              to="/home"
+              className="text-gray-200 hover:text-white text-lg font-medium transition underline"
+            >
               Home
             </Link>
           </li>
           <li>
-            <Link to="/home/users" className="text-xl underline">
+            <Link
+              to="/home/users"
+              className="text-gray-200 hover:text-white text-lg font-medium transition underline"
+            >
               Users
             </Link>
           </li>
