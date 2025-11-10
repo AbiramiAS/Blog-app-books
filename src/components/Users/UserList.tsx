@@ -12,8 +12,8 @@ function UserList() {
     <div className="min-h-screen flex flex-col bg-gray-800/70">
       <Header />
 
-      <main className="container bg-gray-800/70 mx-auto px-4 sm:px-6 lg:px-8 pt-2 pb-8">
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-4 sm:mb-6">
+      <main className="bg-gray-800/70 rounded-2xl sm:px-3 lg:px-4 mx-4 pt-2 pb-8">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-4">
           <div className="sm:ml-auto">
             <div className="inline-flex">
               <AddNewAuthor />
@@ -21,7 +21,7 @@ function UserList() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-2 sm:gap-4">
           {users.map((user) => (
             <Link
               key={user.id}

@@ -48,15 +48,15 @@ const BookForm: React.FC<Props> = ({ editing = null, onDone }) => {
         userId: userId,
         title: title.trim(),
         author: author,
-        description: description.trim(),
+        description: description?.trim(),
       };
       dispatch(updateBooks(updatedData)).unwrap();
-    } else {  
+    } else {
       const newBook = {
         userId: userId,
         title: title.trim(),
         author: author.trim(),
-        body: description.trim(),
+        body: description?.trim(),
         createdAt: new Date().toISOString(),
       };
       dispatch(addNewBooks(newBook)).unwrap();
@@ -83,7 +83,8 @@ const BookForm: React.FC<Props> = ({ editing = null, onDone }) => {
           id={"title"}
           value={title}
           onChange={onTitleChanged}
-          className="mt-1 block w-full rounded-md border p-2 text-white" required
+          className="mt-1 block w-full rounded-md border p-2 text-white"
+          required
         />
       </div>
       <div>
@@ -92,15 +93,17 @@ const BookForm: React.FC<Props> = ({ editing = null, onDone }) => {
           id="author"
           value={userId || ""}
           onChange={onAuthorChanged}
-          className="mt-1 block w-full rounded-md border bg-gray-800 p-2 light:text-black dark:text-white"
+          className=" text-sm mt-1 pr-2 block w-full rounded-md border bg-gray-800 p-2 light:text-black dark:text-white"
         >
-          {/* <option value=""></option> */}
+          <option value=""></option>
           {usersOptions}
         </select>
         <AddNewAuthor />
       </div>
       <div>
-        <label className="block text-sm font-medium text-white">Description</label>
+        <label className="block text-sm font-medium text-white">
+          Description
+        </label>
         <textarea
           value={description}
           onChange={onContentChanged}
@@ -110,7 +113,7 @@ const BookForm: React.FC<Props> = ({ editing = null, onDone }) => {
       <div className="flex gap-2">
         <button
           type="submit"
-          className="px-4 py-2 rounded bg-indigo-600 text-white disabled:opacity-50"
+          className="px-4 py-2 rounded bg-indigo-600 text-white opacity-100 disabled:opacity-50"
           disabled={!title.trim() || !author.trim()}
         >
           {editing ? "Save" : "Add Book"}
