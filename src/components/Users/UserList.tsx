@@ -9,11 +9,11 @@ function UserList() {
   const users = useSelector(selectAllUsers);
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-gray-800/70">
       <Header />
 
-      <main className="container mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-12 bg-fuchsia-50">
-        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-6 sm:mb-8">
+      <main className="container bg-gray-800/70 mx-auto px-4 sm:px-6 lg:px-8 pt-2 pb-8">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-4 sm:mb-6">
           <div className="sm:ml-auto">
             <div className="inline-flex">
               <AddNewAuthor />
@@ -34,9 +34,7 @@ function UserList() {
                   <h2 className="text-lg sm:text-xl font-semibold text-white group-hover:text-indigo-300">
                     {user.name}
                   </h2>
-                  <p className="mt-1 text-sm text-gray-500">
-                    View profile
-                  </p>
+                  <p className="mt-1 text-sm text-gray-500">View profile</p>
                 </div>
                 <span
                   className="mt-1 inline-flex items-center justify-center rounded-full bg-indigo-500 text-white w-8 h-8"

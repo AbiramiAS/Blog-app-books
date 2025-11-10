@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="m-6 rounded-2xl bg-gray-800 px-6 py-4 shadow-sm flex items-center justify-between">
+    <header className="m-4 rounded-2xl bg-gray-800/70 px-6 py-4 shadow-sm flex items-center justify-between">
       <h1 className="text-xl sm:text-2xl font-semibold tracking-tight text-gray-100">
         Book Blog
       </h1>

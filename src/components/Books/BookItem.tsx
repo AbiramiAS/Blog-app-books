@@ -22,11 +22,11 @@ const BookItem: React.FC<Props> = ({ selectedbook, onEdit }) => {
       <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
         {/* Title & Meta */}
         <div className="min-w-0">
-          <h3 className="text-lg sm:text-xl font-semibold tracking-tight text-gray-900 dark:text-gray-100">
+          <h3 className="text-lg sm:text-xl font-semibold tracking-tight text-gray-100">
             {selectedbook.title}
           </h3>
           {selectedbook.userId && (
-            <div className="mt-1 text-sm text-gray-600 dark:text-gray-400">
+            <div className="mt-1 text-sm text-white">
               <BookAuthor userId={selectedbook.userId} />
             </div>
           )}
@@ -36,14 +36,14 @@ const BookItem: React.FC<Props> = ({ selectedbook, onEdit }) => {
         <div className="flex items-center gap-2 sm:gap-3">
           <button
             onClick={() => onEdit(selectedbook)}
-            className="inline-flex items-center justify-center rounded-xl text-white dark:bg-gray-900 px-2 py-1 text-sm shadow-sm"
+            className="inline-flex items-center justify-center rounded-xl bg-gray-900 px-2 py-1 text-sm shadow-sm"
             aria-label={`Edit ${selectedbook.title}`}
           >
             Edit
           </button>
           <button
             onClick={() => dispatch(deleteBook(selectedbook.id)).unwrap()}
-            className="inline-flex items-center justify-center rounded-xl dark:bg-red-100 px-2 py-1 text-sm shadow-sm"
+            className="inline-flex items-center justify-center rounded-xl bg-red-400 px-2 py-1 text-sm shadow-sm"
             aria-label={`Delete ${selectedbook.title}`}
           >
             Delete
@@ -53,14 +53,14 @@ const BookItem: React.FC<Props> = ({ selectedbook, onEdit }) => {
 
       {/* Description */}
       {selectedbook.description && (
-        <p className="mt-3 text-sm text-gray-700 dark:text-gray-300 line-clamp-3 sm:line-clamp-none">
+        <p className="mt-3 text-sm text-gray-300 line-clamp-3 sm:line-clamp-none">
           {selectedbook.description}
         </p>
       )}
 
       {/* Footer meta */}
-      <div className="mt-3 flex items-center gap-2 text-xs color-gray-500 dark:text-gray-400">
-        <span className="inline-flex items-center rounded-full bg-gray-100 dark:bg-gray-800">
+      <div className="mt-3 flex items-center gap-2 text-xs text-gray-400">
+        <span className="inline-flex items-center rounded-full bg-gray-800">
           Added:
         </span>
         <time dateTime={addedDate ? addedDate.toISOString() : undefined}>

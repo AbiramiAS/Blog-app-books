@@ -92,9 +92,9 @@ const BookForm: React.FC<Props> = ({ editing = null, onDone }) => {
           id="author"
           value={userId || ""}
           onChange={onAuthorChanged}
-          className="mt-1 block w-full rounded-md border p-2 text-white"
+          className="mt-1 block w-full rounded-md border bg-gray-800 p-2 light:text-black dark:text-white"
         >
-          <option value=""></option>
+          {/* <option value=""></option> */}
           {usersOptions}
         </select>
         <AddNewAuthor />
